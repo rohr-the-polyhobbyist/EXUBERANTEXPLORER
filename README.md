@@ -7,23 +7,28 @@ EXUBERANTEXPLORER is a web scraping project designed to pull data on Magic: The 
 ## Features
 
 - Web scraping of Magic: The Gathering card data
-    - Uses `requests` for HTTP requests
-    - Uses `BeautifulSoup` for parsing HTML
+  - Uses `requests` for HTTP requests
+  - Uses `BeautifulSoup` for parsing HTML
 - Data processing and analysis using embedding techniques
-    - Uses `numpy` for numerical operations
-    - Uses `scikit-learn` for machine learning algorithms
+  - Uses `numpy` for numerical operations
+  - Uses `scikit-learn` for machine learning algorithms
 
 ## Installation
 
 1. Clone the repository:
+
     ```bash
-    git clone https://github.com/yourusername/EXUBERANTEXPLORER.git
+    git clone https://github.com/<yourusername>/EXUBERANTEXPLORER.git
     ```
+
 2. Navigate to the project directory:
+
     ```bash
     cd EXUBERANTEXPLORER
     ```
+
 3. Install the required dependencies:
+
     ```bash
     pip install -r requirements.txt
     ```
@@ -31,10 +36,13 @@ EXUBERANTEXPLORER is a web scraping project designed to pull data on Magic: The 
 ## Usage
 
 1. Run the web scraper to collect data:
+
     ```bash
     python scraper.py
     ```
+
 2. Process the collected data using embedding techniques:
+
     ```bash
     python process_data.py
     ```
