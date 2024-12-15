@@ -168,6 +168,7 @@ cython_debug/
 #.idea/
 
 # Visual Studio Code
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -180,3 +181,6 @@ cython_debug/
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Project Specific files to ignore
+data/cache/*
