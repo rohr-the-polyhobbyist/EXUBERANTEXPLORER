@@ -41,14 +41,7 @@ EXUBERANTEXPLORER is a project of education and fun. In this project, I will lea
 
 ## Usage
 
-From the project directory, follow the following instructions to use different features.  
-  
-1. Collect the metadata for Scryfall's bulk data:
-
-    ```bash
-    cd src
-    python -m bulk_data_request.py
-    ```
+This section is under revision as I settle on a project structure that makes sense. Currently, I am looking to replicate [this project structure](https://gist.github.com/ericmjl/27e50331f24db3e8f957d1fe7bbbe510?permalink_comment_id=5031342) to get started.  
 
 ## Contributing
 
