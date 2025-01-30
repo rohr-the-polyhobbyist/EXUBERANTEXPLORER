@@ -1,0 +1,11 @@
+from constants import *
+print('Script directory:', SCRIPT_DIR)
+print('Module directory:', MODULE_DIR)
+print('Project directory:', PROJECT_DIR)
+print('Data directory:', DATA_DIR)
+print('Cache directory:', CACHE_DIR)
+print('Bulk metadata path:', BULK_METADATA_PATH)
+print('Scryfall bulk data URL:', SCRYFALL_BULK_DATA_URL)
+print('Headers:', HEADERS)
+print('Timeout:', TIMEOUT)
+print('Force:', FORCE)
