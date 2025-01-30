@@ -10,7 +10,7 @@ print(SCRYFALL_BULK_DATA_URL)
 response = make_api_request(SCRYFALL_BULK_DATA_URL, headers=HEADERS, timeout=TIMEOUT)
 
 # Save the bulk data metadata to a file
-bulk_data_metadata = get_bulk_data_metadata(force=FORCE)
+bulk_data_metadata = get_bulk_data_metadata(force=True)
 
 # Get the bulk data information - will select oracle cards by default
 bulk_data_info = get_bulk_data_info(card_type="oracle_cards")
