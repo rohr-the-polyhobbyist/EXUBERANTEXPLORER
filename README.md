@@ -24,7 +24,7 @@ EXUBERANTEXPLORER is a project of education and fun. In this project, I will lea
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/<yourusername>/EXUBERANTEXPLORER.git
+    git clone https://github.com/rohr-the-polyhobbyist/EXUBERANTEXPLORER.git
     ```
 
 2. Navigate to the project directory:

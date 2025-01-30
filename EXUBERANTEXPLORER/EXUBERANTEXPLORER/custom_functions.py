@@ -1,28 +1,6 @@
 """
-This script fetches bulk data\'s metadata from the Scryfall API and saves it to a local file.
-Modules:
-    requests: To make HTTP requests to the Scryfall API.
-    os: To interact with the operating system, such as creating directories and file paths.
-    json: To handle JSON data.
-Constants:
-    CACHE_DIR (str): Directory to store cached data.
-    BULK_DATA_PATH (str): Path to the bulk-data.json file.
-    SCRYFALL_BULK_DATA_URL (str): URL to the Scryfall bulk data endpoint.
-    HEADERS (dict): Required headers to send with the request.
-    TIMEOUT (int): Timeout for the request in seconds.
-    FORCE (bool): Whether to force writing to file even if file already exists.
-Functions:
-    make_api_request(url, params=None, headers=None, timeout=10):
-        Makes a GET request to the specified URL with optional parameters and headers.
-    get_bulk_data_metadata(force=False):
-        Get the Scryfall bulk data metadata and save it to a file.
-Usage:
-    Run this script directly to fetch and save the Scryfall bulk data.
-
-Returns:
-    None
+This script defines custom functions for the EXUBERANTEXPLORER project.
 """
-from EXUBERANTEXPLORER.EXUBERANTEXPLORER.constants import CACHE_DIR, BULK_DATA_PATH, SCRYFALL_BULK_DATA_URL, HEADERS, TIMEOUT, FORCE
 
 def make_api_request(url, params=None, headers=None, timeout=10):
     """
@@ -49,6 +27,7 @@ def get_bulk_data_metadata(force=False):
     Args:
         force (bool, optional): Whether you'd like to force write the file. Defaults to False.
     """
+    from EXUBERANTEXPLORER.constants import CACHE_DIR, BULK_METADATA_PATH, SCRYFALL_BULK_DATA_URL, HEADERS, TIMEOUT
     import os
     import json
 
@@ -57,7 +36,7 @@ def get_bulk_data_metadata(force=False):
         os.makedirs(CACHE_DIR)
 
     # Check if the bulk-data.json file exists, if not create it
-    if not os.path.exists(BULK_DATA_PATH) or force:
+    if not os.path.exists(BULK_METADATA_PATH) or force:
         # Make the request
         response = make_api_request(
             SCRYFALL_BULK_DATA_URL, headers=HEADERS, timeout=TIMEOUT
@@ -66,7 +45,7 @@ def get_bulk_data_metadata(force=False):
             print("Request successful.")
 
             # Save the response to a file
-            with open(BULK_DATA_PATH, "w+", encoding="utf-8") as f:
+            with open(BULK_METADATA_PATH, "w+", encoding="utf-8") as f:
                 json.dump(response.json(), f)
                 print("Bulk data saved to file.")
                 return response.json()
@@ -83,7 +62,7 @@ def get_bulk_data_metadata(force=False):
         elif response.status_code.startswith("4"):
             print("Client error. Please check the request and try again.")
     else:
-        bulk_data_metadata = json.load(open(BULK_DATA_PATH, "r", encoding="utf-8"))
+        bulk_data_metadata = json.load(open(BULK_METADATA_PATH, "r", encoding="utf-8"))
         return bulk_data_metadata
 
 def get_bulk_data_info(card_type="oracle_cards"):
@@ -97,11 +76,12 @@ def get_bulk_data_info(card_type="oracle_cards"):
             If card_type is a string, returns a dictionary.
             If card_type is a list, returns a dictionary of dictionaries.
     """
+    from EXUBERANTEXPLORER.constants import BULK_METADATA_PATH
     import os
     import json
 
     # Error check the card_type variable
-    if not os.path.exists(BULK_DATA_PATH):
+    if not os.path.exists(BULK_METADATA_PATH):
         raise FileNotFoundError("Bulk data metadata does not exist.")
     if not isinstance(card_type, list) and not isinstance(card_type, str):
         raise TypeError("card_type must be a string or list of strings.")
@@ -110,10 +90,10 @@ def get_bulk_data_info(card_type="oracle_cards"):
             if not isinstance(element, str):
                 raise TypeError("Elements in card_type must be strings.")
     # Load the bulk data metadata
-    with open(BULK_DATA_PATH, "r", encoding="utf-8") as f:
+    with open(BULK_METADATA_PATH, "r", encoding="utf-8") as f:
         bulk_data = json.load(f)
 
-    # Check to see if the card type is in the bulk data metadata
+    # Check to see if the card type is in the bulk data metadarom EXUBERANTEXPLORER.EXUBERANTEXPLORER.constants import TIMEOUT
     if isinstance(card_type, str):
         for meta_data in bulk_data["data"]:
             if meta_data["type"] == card_type:
