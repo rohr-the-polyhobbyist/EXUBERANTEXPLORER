@@ -106,7 +106,7 @@ def get_bulk_data_info(card_type="oracle_cards"):
                     bulk_data_info[element] = meta_data
         return bulk_data_info
 
-def get_bulk_data_gzip():
+def get_card_data_gzip():
     """Get the Scryfall bulk data and save it to a file.
 
     Args:
