@@ -2,22 +2,14 @@
 
 ## Project Overview
 
-EXUBERANTEXPLORER is a project of education and fun. In this project, I will learn to use web APIs, possibly some web scraping, and eventually, some ML. While I don't have any intention to turn this project into a web application, that could be something I eventually like to do as well! Some ideas and checkpoints I hope to achieve:  
+EXUBERANTEXPLORER is a project of education and fun. In this project, I will learn to use web APIs and do some ML on Magic: The Gathering (MTG) cards. While I don't have any intention to turn this project into a web application, that could be something I eventually like to do as well! Some ideas and checkpoints I hope to achieve:  
   
 - Successfully connect with Scryfall's Web API to get MTG card data  
 - Do something fun and basic with this data  
 - Successfully web scrape some MTG commander format data from another source  
 - Do something fun and basic with this data
 
-## Features
-
-- Pull Magic: The Gathering card data from Scryfall web API
-  - Uses `requests` for HTTP requests
-- ~~Web scraping of Magic: The Gathering card data~~
-  - ~~Uses `BeautifulSoup` for parsing HTML~~
-- ~~Data processing and analysis using embedding techniques~~
-  - ~~Uses `numpy` for numerical operations~~
-  - ~~Uses `scikit-learn` for machine learning algorithms~~
+I've decided to separate the functions I develop for this project into my `tithe_extractor` package: https://github.com/rohr-the-polyhobbyist/tithe-extractor. This project repo will include primarily jupyter notebooks and python scripts to request, store, clean, process, and visualize MTG card data. Eventually, it'd be cool to be able to make deckbuilding recommendations, but for now that goal is far off!
 
 ## Installation
 
@@ -38,10 +30,14 @@ EXUBERANTEXPLORER is a project of education and fun. In this project, I will lea
     ```bash
     pip install -r requirements.txt
     ```
+  * I've been actually exploring using [`uv` by astral](https://docs.astral.sh/uv/) as I learn git CI/CD and other practices. I'm not exactly sure what options are available for others, but this package should have the files necessary to `uv run` the necessary scripts and to install package dependencies with uv. (I could be wrong on that)  
 
 ## Usage
 
-This section is under revision as I settle on a project structure that makes sense. Currently, I am looking to replicate [this project structure](https://gist.github.com/ericmjl/27e50331f24db3e8f957d1fe7bbbe510?permalink_comment_id=5031342) to get started.  
+~~This section is under revision as I settle on a project structure that makes sense. Currently, I am looking to replicate [this project structure](https://gist.github.com/ericmjl/27e50331f24db3e8f957d1fe7bbbe510?permalink_comment_id=5031342) to get started.~~  
+I will need to update this section - for now, the quick description:
+- `uv run scripts/get_scryfall_bulk_metadata.py` to download the metadata from Scryfall's API
+- You can got through the **explore-bulk-card-data** notebook to download the oracle card data and start to explore it. (in prog.)
 
 ## Contributing
 
