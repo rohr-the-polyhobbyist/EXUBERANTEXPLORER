@@ -185,3 +185,6 @@ cython_debug/
 
 # Project Specific files to ignore
 data/cache/*
+data/processed/*
+data/raw/*
+data/cleaned/*
