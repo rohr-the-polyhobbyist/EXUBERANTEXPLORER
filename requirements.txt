@@ -44,7 +44,7 @@ six==1.17.0
 soupsieve==2.6
 stack-data==0.6.3
 threadpoolctl==3.5.0
-tithe-extractor @ git+https://github.com/rohr-the-polyhobbyist/tithe-extractor.git@43378343ef831f3cb58bdaaa35d226bcc00517db
+tithe-extractor @ git+https://github.com/rohr-the-polyhobbyist/tithe-extractor.git@66cd61dd382b9f657f42d12067f02e9a6ee2c060
 tomlkit==0.13.2
 tornado==6.4.2
 traitlets==5.14.3

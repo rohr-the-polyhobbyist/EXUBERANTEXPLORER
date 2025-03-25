@@ -188,3 +188,4 @@ data/cache/*
 data/processed/*
 data/raw/*
 data/cleaned/*
+paths.json
